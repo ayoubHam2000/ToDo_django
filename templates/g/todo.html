@@ -1,0 +1,102 @@
+{% extends "../base.html" %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'styles/list.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/task.css' %}">
+{% endblock styles %}
+
+
+
+{% block content %}
+
+
+<div class="main">
+
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+        <span class="fs-4">List</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto list_items overflow-auto h-100">
+        
+
+
+
+        <div class="the_list_container">
+        
+        {% include "g/list.html" with theList=theList %}
+        
+        </div>
+        
+        
+
+
+
+        </ul>
+        <hr>
+        <button type="button" class="btn btn-secondary" onclick="addItemList(event)">Add</button>
+
+
+
+
+
+
+
+
+
+    </div>
+        
+
+    <div class="w-100 task_content overflow-auto">
+
+
+
+        <div class="The_List_of_Tasks" >
+        
+
+        {% include "g/task.html" with tasks=tasks title=title %}
+        
+        </div>
+
+        
+
+
+        
+    </div>
+
+
+                    
+
+</div>
+
+
+
+{% endblock content %}
+
+
+{% block scripts %}
+    <script type="application/javascript" src="{% static 'scriptes/list.js' %}" > </script>
+    <script type="application/javascript" src="{% static 'scriptes/task.js' %}" > </script>
+    <script type="application/javascript" src="{% static 'scriptes/taskItem.js' %}" > </script>
+    <script>
+        URL_ADD_LIST_ITEM = "{% url "List:todoOperations" "list_add" %}"
+        URL_OPEN_LIST_ITEM = "{% url "List:todoOperations" "list_open" %}"
+        URL_MODIFY_LIST_ITEM = "{% url "List:todoOperations" "list_modify" %}"
+        URL_DELETE_LIST_ITEM = "{% url "List:todoOperations" "list_delete" %}"
+
+        URL_ADD_TASK = "{% url "List:todoOperations" "task_add" %}"
+        URL_MODIFY_TASK = "{% url "List:todoOperations" "task_modify" %}"
+        URL_DELETE_TASK = "{% url "List:todoOperations" "task_delete" %}"
+
+        URL_ADD_TASK_ITEM = "{% url "List:todoOperations" "task_item_add" %}"
+        URL_MODIFY_TASK_ITEM = "{% url "List:todoOperations" "task_item_modify" %}"
+        URL_DELETE_TASK_ITEM = "{% url "List:todoOperations" "task_item_delete" %}"
+        URL_CHANGE_PROGRESS_TASK_ITEM = "{% url "List:todoOperations" "task_item_change_progress" %}"
+
+    </script>
+{% endblock scripts %}
+
+
+
+
+

@@ -1,0 +1,34 @@
+{% for listItem in theList %}
+
+    <li class="align-items-center d-flex justify-content-between the_item" id={{listItem.id}}>
+        <div class="item_link">
+            
+            {% if listItem.active %}
+            
+            <a href="#" class="nav-link text-white active " onclick='openItemList(event)'>{{listItem}}</a>
+            {% else %}
+            <a href="#" class="nav-link text-white  " onclick='openItemList(event)'>{{listItem}}</a>
+
+            {% endif %}
+        
+        </div>
+
+
+        <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            
+            <i class="fa fa-caret-down" aria-hidden="true"></i>
+
+
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="#" onclick='addTask(event)'>Add Task</a></li>
+            <li><a class="dropdown-item" href="#" onclick='modifyItemList(event)'>Modify</a></li>
+            <li><a class="dropdown-item" href="#" onclick='deleteItemList(event)' >Delete</a></li>
+        </ul>
+        </div>
+
+
+    </li>
+
+{% endfor %}

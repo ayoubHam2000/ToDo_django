@@ -1,0 +1,29 @@
+
+
+/*---------------------------------------------*/
+/*Main*/
+
+.main{
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+  height: -webkit-fill-available;
+  max-height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/*---------------------------------------------*/
+/*List*/
+
+.list_items{
+  padding:0px 10px;
+}
+
+.list_items li{
+  margin: 5px 0;
+}
+
+.list_items li .item_link{
+  width: 85%;
+}

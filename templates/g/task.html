@@ -1,0 +1,41 @@
+<h1 class="the_task_title">{{title}}</h1>
+<div class="my_hr"></div>
+
+{% for task in tasks %}
+
+<div class="card-body task_item" id="{{task.id}}">
+
+    <div class="d-flex justify-content-between">
+
+        <div class="task_title">
+        <h4 class="card-title">{{task}}</h4>
+        </div>
+        
+        
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            
+            <i class="fa fa-caret-down" aria-hidden="true"></i>
+
+
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" href="#" onclick='addItemToTask(event)'>Add Item</a></li>
+                <li><a class="dropdown-item" href="#" onclick='modifyTask(event)'>Modify</a></li>
+                <li><a class="dropdown-item" href="#" onclick='deleteTask(event)' >Delete</a></li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <div class="list-wrapper">
+        <ul class="d-flex flex-column task_list_item ">
+            
+
+            {% include "g/taskItems.html" with taskItem=task.itemmodel_set.all %}
+
+        </ul>
+    </div>
+</div>
+
+{% endfor %}

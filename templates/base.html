@@ -1,0 +1,40 @@
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TODO LIST</title>
+
+        <link rel="stylesheet" href="{% static 'styles/css/fontAwesome.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+        {% block styles %}{% endblock styles %}
+
+    </head>
+    <body>
+
+        {% block content %}
+        
+        {% endblock content %}
+
+        
+    </body>
+
+    <script type="application/javascript" src="{% static 'scriptes/jquery-3.6.0.min.js' %}" > </script>
+    <script type="application/javascript" src="{% static 'scriptes/js/fontAwesome.js' %}" > </script>
+
+    <script type="application/javascript" src="{% static 'scriptes/js/popper.min.js' %}" > </script>
+    <script type="application/javascript" src="{% static 'scriptes/js/bootstrap.bundle.min.js' %}" > </script>
+    <script type="application/javascript" src="{% static 'scriptes/js/bootstrap.min.js' %}" > </script>
+    
+    <script type="application/javascript" src="{% static 'scriptes/script.js' %}" > </script>
+    {% block scripts %}{% endblock scripts %}
+  
+
+
+</html>
+
+
+
